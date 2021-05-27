@@ -1,4 +1,4 @@
-# Watchlistproject
+# Watchlist project
 
 Movie WatchList project.
 
