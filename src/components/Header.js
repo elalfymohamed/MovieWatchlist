@@ -1,9 +1,17 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [clickButton, setClickButton] = useState(false);
+  const [showButton, setShowButton] = useState(true);
+
+  const windowWidth = () =>
+    window.innerWidth <= 960 ? setShowButton(false) : setShowButton(true);
+
+  useEffect(() => windowWidth);
+
   return (
     <header className="py-3 bg-blue-1000">
       <div className="container m-auto">

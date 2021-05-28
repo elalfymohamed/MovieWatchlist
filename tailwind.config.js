@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const colors = require("tailwindcss/colors");
 
 module.exports = {
@@ -9,6 +10,7 @@ module.exports = {
         blue: {
           ...colors.blue,
           1000: "#032541",
+          1001: "#263238",
         },
         green: {
           ...colors.green,

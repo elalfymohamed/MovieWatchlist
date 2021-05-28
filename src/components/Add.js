@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import ResultCard from "./ResultCard";
+import ResultCard from "../contents/ResultCard";
 
 import Recording from "../assets/Recording-a-movie-rafiki.svg";
 
@@ -19,12 +19,11 @@ const Add = () => {
         console.log(data);
         if (!data.errors) {
           setResults(data.results);
-        } else { 
+        } else {
           setResults([]);
         }
       });
   };
-
 
   return (
     <div className="block">
@@ -52,13 +51,11 @@ const Add = () => {
               </li>
             ))}
           </ul>
-        ) : 
-          
-          <div className="flex justify-center mt-24">
-          <img src={Recording} alt="" className="max-w-full h-96 opacity-70" />
+        ) : (
+          <div className="flex justify-center mt-0">
+            <img src={Recording} alt="" className="max-w-full h-96 " />
           </div>
-          
-        }
+        )}
       </div>
     </div>
   );
