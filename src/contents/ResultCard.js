@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { EyeIcon, EyeOffIcon } from "@heroicons/react/solid";
 
 import { GlobalContext } from "../context/GlobalState";
-import arabica from "../assets/arabica-172.png";
+import arabica from "url:../assets/arabica-172.png";
 
 const ResultCard = ({ movie }) => {
   const { addMovieToWatchList, addMovieToWatched, watchList, watched } =
@@ -63,11 +63,11 @@ const ResultCard = ({ movie }) => {
             {movie.release_date ? movie.release_date.substring(0, 4) : `-`}
           </h4>
         </div>
-        <div className="flex flex-row flex-nowrap items-center content-center">
+        <div className="flex flex-row flex-nowrap items-center content-center opacity-0 group-hover:opacity-100">
           <button
             className="bg-green-1000 py-2 px-3 mr-3 text-white
           font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2
-          focus:ring-opacity-75 sm:py-3 sm:px-4"
+          focus:ring-opacity-75 disabled:opacity-50 sm:py-3 sm:px-4"
             type="button"
             disabled={watchListDisabled}
             onClick={() => addMovieToWatchList(movie)}
@@ -81,7 +81,7 @@ const ResultCard = ({ movie }) => {
           <button
             className="bg-green-1000 py-2 px-3 mr-3 text-white mt-1
           font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2
-          focus:ring-opacity-75 sm:py-3 sm:px-4"
+          focus:ring-opacity-75 disabled:opacity-50 sm:py-3 sm:px-4"
             type="button"
             disabled={watchedDisabled}
             onClick={() => addMovieToWatched(movie)}

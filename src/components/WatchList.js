@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 import MovieCard from "../contents/MovieCard";
 
-import Home from "../assets/Home cinema-rafiki.svg";
+import Home from "url:../assets/Home-cinema-rafiki.svg";
 
 const WatchList = () => {
   const { watchList } = useContext(GlobalContext);

@@ -4,13 +4,13 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [clickButton, setClickButton] = useState(false);
-  const [showButton, setShowButton] = useState(true);
+  // const [clickButton, setClickButton] = useState(false);
+  // const [showButton, setShowButton] = useState(true);
 
-  const windowWidth = () =>
-    window.innerWidth <= 960 ? setShowButton(false) : setShowButton(true);
+  // const windowWidth = () =>
+  //   window.innerWidth <= 960 ? setShowButton(false) : setShowButton(true);
 
-  useEffect(() => windowWidth);
+  // useEffect(() => windowWidth);
 
   return (
     <header className="py-3 bg-blue-1000">
@@ -34,10 +34,11 @@ const Header = () => {
             </li>
             <li>
               <Link
-                className="py-2 px-5 font-medium text-1xl bg-green-1000 rounded-xl focus:outline-none focus:ring-2 focus:ring-opacity-75"
+                className="py-2 px-4 font-medium text-1xl bg-green-1000 rounded-xl
+                focus:outline-none focus:ring-2 focus:ring-opacity-75"
                 to="/add"
               >
-                Add
+                + Add
               </Link>
             </li>
           </ul>

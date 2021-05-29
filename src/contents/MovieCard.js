@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { MovieControls } from "./MovieControls";
-import arabica from "../assets/arabica-172.png";
+import arabica from "url:../assets/arabica-172.png";
 
 const MovieCard = ({ movie, type }) => {
   return (
@@ -30,7 +30,7 @@ const MovieCard = ({ movie, type }) => {
             {movie.release_date ? movie.release_date.substring(0, 4) : `-`}
           </h4>
         </div>
-        <div className="flex flex-row flex-nowrap items-center content-center">
+        <div className="flex flex-row flex-nowrap items-center content-center opacity-0 group-hover:opacity-100">
           <MovieControls movie={movie} type={type} />
         </div>
       </div>

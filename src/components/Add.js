@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import ResultCard from "../contents/ResultCard";
 
-import Recording from "../assets/Recording-a-movie-rafiki.svg";
+import Recording from "url:../assets/Recording-a-movie-rafiki.svg";
 
 const Add = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+
+  const inputEl = useRef(null);
 
   const onChange = (e) => {
     e.preventDefault();
@@ -16,14 +18,18 @@ const Add = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (!data.errors) {
           setResults(data.results);
+          console.clear();
         } else {
           setResults([]);
         }
       });
   };
+
+  useEffect(() => {
+    inputEl.current.focus();
+  });
 
   return (
     <div className="block">
@@ -31,6 +37,7 @@ const Add = () => {
         <div className="mt-12">
           <div className="text-center">
             <input
+              ref={inputEl}
               className="bg-blue-1000  w-5/6 h-11 rounded-xl pl-4
                 text-white font-normal focus:outline-none text-base lg:w-3/6 sm:w-5/6 "
               type="text"

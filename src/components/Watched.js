@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 import MovieCard from "../contents/MovieCard";
 
-import Home from "../assets/Movie Night-rafiki.svg";
+import Movie_Night from "url:../assets/Movie-Night-rafiki.svg";
 
 const Watched = () => {
   const { watched } = useContext(GlobalContext);
@@ -38,7 +38,7 @@ const Watched = () => {
             </ul>
           ) : (
             <div className="flex flex-nowrap flex-col items-center justify-center mt-24">
-              <img className="max-w-full h-96" src={Home} alt="" />
+              <img className="max-w-full h-96" src={Movie_Night} alt="" />
 
               <p className="font-normal text-base text-gray-500 sm:text-2xl ">
                 No movie in your list. add some!
